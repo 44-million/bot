@@ -47,7 +47,7 @@ public class BotInfo implements MessageCreateListener {
             embed.addInlineField("Commands", "This list is too long to put here, try `" + prefix + "help` or `" + prefix + "help 2`");
             embed.addInlineField("Creator:", "ٴٴٴٴٴٴٴٴٴٴٴٴٴٴٴٴٴٴٴٴٴٴٴٴ#8966");
             embed.addInlineField("Syntax", "This bot uses the prefix: `" + prefix + "`.\nWhen viewing the `help` page, **<args>** denotes a required argument, and **[args]** represents an optional argument!");
-            embed.addField("Other info:", "The bot is made in `JAVA` using JavaCord. The original repository for this bot can be found [here]()");
+            embed.addField("Other info:", "The bot is made in `JAVA` using JavaCord. The original repository for this bot can be found [here](https://github.com/primevibetime/Aois-bot) (note, this will probably be private)");
 
             embed.setFooter("Requested by: " + event.getMessageAuthor().getDiscriminatedName());
             embed.setTimestampToNow();

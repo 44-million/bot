@@ -152,7 +152,6 @@ public class Aois {
         Aois.commands.add(new Command());
         Aois.commands.add(new BotInfo());
         Aois.commands.add(new ServerInfo());
-        Aois.commands.add(new BotInfo());
 
         for (MessageCreateListener listener : Aois.commands) {
 
