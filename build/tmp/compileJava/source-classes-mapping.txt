@@ -1,0 +1,34 @@
+commands/DEV.java
+ commands.DEV
+main/App.java
+ main.App
+commands/ServerInfo.java
+ commands.ServerInfo
+rcs/info.java
+ rcs.info
+commands/UserInfoDev.java
+ commands.UserInfoDev
+commands/channel/ChannelInfo.java
+ commands.channel.ChannelInfo
+rcs/Aois.java
+ rcs.Aois
+rcs/utilities.java
+ rcs.utilities
+commands/Latency.java
+ commands.Latency
+commands/BotInfo.java
+ commands.BotInfo
+rcs/Config.java
+ rcs.Config
+commands/Help.java
+ commands.Help
+commands/channel/DeleteChannel.java
+ commands.channel.DeleteChannel
+commands/Command.java
+ commands.Command
+commands/UserInfo.java
+ commands.UserInfo
+main/SQL/create.java
+ main.SQL.create
+commands/channel/CreateChannel.java
+ commands.channel.CreateChannel
