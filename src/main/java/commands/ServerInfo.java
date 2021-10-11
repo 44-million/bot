@@ -43,14 +43,14 @@ public class ServerInfo implements MessageCreateListener {
 
                 EmbedBuilder embed = new EmbedBuilder();
 
-                embed.setAuthor(server.getName(), (server.getIcon().isPresent() ? server.getIcon().get().getUrl().toString() : "https://i.kym-cdn.com/entries/icons/facebook/000/022/709/discord.jpg"), server.getIcon().get());
+                embed.setAuthor(server.getName(), null, serverIcon(server));
                 embed.setTimestampToNow();
                 embed.setFooter("Info about: " + event.getServer().get().getName());
 
                 embed.addInlineField("Name:", "__" + server.getName() + "__");
                 embed.addInlineField("Member count:", "**" + server.getMemberCount() + "**");
                 embed.addInlineField("Boost level:", (server.getBoostLevel().name().equalsIgnoreCase("none") ? "This server has *no* boosts!" : server.getBoostLevel().name().toLowerCase()));
-                embed.addInlineField("Icon:", "[Click Here for the icon](" + server.getIcon().get().getUrl().toString() + ")");
+                embed.addInlineField("Icon:", "[Click Here for the icon](" + serverIcon(server) + ")");
                 embed.addInlineField("Creation date:", getCreationDateServer(server));
                 embed.addInlineField("Creation Time:", getCreationTimeServer(server));
 

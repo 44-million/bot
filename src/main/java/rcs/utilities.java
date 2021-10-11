@@ -448,6 +448,16 @@ public class utilities {
 
     }
 
+    public static String serverIcon(Server server) {
+
+        if (server.getIcon().isPresent()) {
+            return server.getIcon().get().getUrl().toString();
+        } else {
+            return "https://www.discord.com/assets/1f0bfc0865d324c2587920a7d80c609b.png";
+        }
+
+    }
+
     public static String colors(User user, Server server) {
 
         if (user.getRoleColor(server).isEmpty()) {
