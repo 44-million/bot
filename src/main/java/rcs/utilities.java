@@ -409,6 +409,24 @@ public class utilities {
 
     }
 
+    public static String getRolesWithSpace(User user, Server server) {
+
+        StringBuilder s = new StringBuilder();
+
+        if (user.getRoles(server).isEmpty()) {
+            s.append("This user has no roles!");
+            return s.toString();
+        }
+
+        for (Role role : user.getRoles(server)) {
+
+            s.append(role.getMentionTag()).append(" ");
+
+        }
+        return s.toString();
+
+    }
+
     public static String getServerRoles(Server server) {
 
         StringBuilder s = new StringBuilder();

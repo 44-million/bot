@@ -59,7 +59,7 @@ public class UserInfo implements MessageCreateListener {
                 embed.addField("Join date:", "**" + utilities.getExactCreationDate(user) + "** at **" + utilities.getExactCreationTime(user) + "**\n\nThat was " + utilities.getCreationDate(user));
                 embed.addField("Voice connection status", utilities.voice(server, user));
                 embed.addInlineField("`" + user.getName() + "`'s colors!", utilities.colors(user, server));
-                embed.addInlineField("All of their roles:", utilities.getRoles(user, server));
+                embed.addField("All of their roles:", utilities.getRolesWithSpace(user, server));
 
                 event.getMessage().reply(embed);
 
@@ -91,7 +91,7 @@ public class UserInfo implements MessageCreateListener {
                 embed.addField("Join date:", "**" + utilities.getExactCreationDate(user) + "** at **" + utilities.getExactCreationTime(user) + "**\n\nThat was " + utilities.getCreationDate(user));
                 embed.addField("Voice connection status", utilities.voice(server, user));
                 embed.addInlineField("`" + user.getName() + "`'s colors!", utilities.colors(user, server));
-                embed.addInlineField("All of their roles:", utilities.getRoles(user, server));
+                embed.addField("All of their roles:", utilities.getRolesWithSpace(user, server));
 
                 event.getMessage().reply(embed);
 
@@ -111,7 +111,7 @@ public class UserInfo implements MessageCreateListener {
                 embed.addField("Join date:", "**" + utilities.getExactCreationDate(user) + "** at **" + utilities.getExactCreationTime(user) + "**\n\nThat was " + utilities.getCreationDate(user));
                 embed.addField("Voice connection status", utilities.voice(server, user));
                 embed.addInlineField("Your colors!", utilities.colors(user, server));
-                embed.addInlineField("All of your roles:", utilities.getRoles(user, server));
+                embed.addField("All of your roles:", utilities.getRolesWithSpace(user, server));
                 event.getMessage().reply(embed);
 
             }
