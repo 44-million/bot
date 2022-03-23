@@ -90,9 +90,10 @@ public class utilities {
         ObjectMapper mapper = new ObjectMapper(new YAMLFactory().disable(YAMLGenerator.Feature.WRITE_DOC_START_MARKER));
         Config config = null;
         try {
-            config = mapper.readValue(new File("src/main/resources/config.yml"), Config.class);
+            config = mapper.readValue(new File("src/main/java/rcs/config.yml"), Config.class);
         } catch (IOException e) {
-            System.out.println("There was an error reading the input file!");
+            System.err.println("There was an error reading the input file!");
+            System.exit(-1);
         }
         mapper.findAndRegisterModules();
         mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);

