@@ -1,25 +1,25 @@
 package commands.channel;
 
-import static rcs.info.prefix;
-import static rcs.utilities.discardable;
-import static rcs.utilities.equalsAny;
-
-import java.util.concurrent.ExecutionException;
-
 import org.javacord.api.entity.channel.ServerTextChannelBuilder;
 import org.javacord.api.entity.message.embed.EmbedBuilder;
 import org.javacord.api.event.message.MessageCreateEvent;
 import org.javacord.api.listener.message.MessageCreateListener;
 
+import java.util.concurrent.ExecutionException;
+
+import static rcs.info.prefix;
+import static rcs.utilities.discardable;
+import static rcs.utilities.equalsAny;
+
 public class CreateChannel implements MessageCreateListener {
+
+    public static String[] aliases = {prefix + "makechannel", prefix + "createchannel", prefix + "newchannel"};
 
     public static String description() {
         return "A command to create a new text channel!\n\nThis command creates a basic text channel, with the provided information!\n\n**SYNTAX**\n\n```html\n" + prefix + "createchannel [name]\n```";
     }
 
-    public static String[] aliases = { prefix + "makechannel", prefix + "createchannel", prefix + "newchannel" };
-
-     public static String getAliases() {
+    public static String getAliases() {
 
         StringBuilder j = new StringBuilder();
 
@@ -84,8 +84,8 @@ public class CreateChannel implements MessageCreateListener {
             ServerTextChannelBuilder b = new ServerTextChannelBuilder(event.getServer().get());
 
             try {
-                        b.setName(name);
-                        id = b.create().get().getId();
+                b.setName(name);
+                id = b.create().get().getId();
             } catch (InterruptedException | ExecutionException e) {
                 event.getMessage().reply("Sorry, something went wrong...");
                 return;

@@ -3,16 +3,15 @@ package commands;
 import org.javacord.api.event.message.MessageCreateEvent;
 import org.javacord.api.listener.message.MessageCreateListener;
 
-import static rcs.utilities.*;
-import static rcs.info.*;
+import static rcs.info.prefix;
 
 public class UserInfoDev implements MessageCreateListener {
+
+    public static String[] aliases = {prefix + "devinfo", prefix + "devui", prefix + "devwhois", prefix + "devuserinfo"};
 
     public static String description() {
         return "The developer equivalent of the `" + prefix + "ui` command. Has more technical information than the regular command.";
     }
-
-    public static String[] aliases = { prefix + "devinfo", prefix + "devui", prefix + "devwhois", prefix + "devuserinfo" };
 
     public static String getAliases() {
 

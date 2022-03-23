@@ -1,9 +1,5 @@
 package commands;
 
-import static rcs.info.prefix;
-import static rcs.utilities.discardable;
-import static rcs.utilities.equalsAny;
-
 import org.javacord.api.entity.message.embed.EmbedBuilder;
 import org.javacord.api.entity.server.Server;
 import org.javacord.api.entity.user.User;
@@ -12,7 +8,13 @@ import org.javacord.api.listener.message.MessageCreateListener;
 import rcs.Aois;
 import rcs.utilities;
 
+import static rcs.info.prefix;
+import static rcs.utilities.discardable;
+import static rcs.utilities.equalsAny;
+
 public class UserInfo implements MessageCreateListener {
+
+    public static String[] aliases = {prefix + "whois", prefix + "ui", prefix + "userinfo"};
 
     /**
      * @return The description for this command
@@ -20,9 +22,6 @@ public class UserInfo implements MessageCreateListener {
     public static String description() {
         return "A command to get information about the mentioned user!\n\nThis command yields the user's `creation time` and the `creation date` and the `roles` and the `status`, `voice` connection status, and much more!\n\n**SYNTAX**\n\n```html\n" + prefix + "ui[@user]\n```\n\nThis command has simple syntax, but lots of information!";
     }
-
-
-    public static String[] aliases = { prefix + "whois", prefix + "ui", prefix + "userinfo" };
 
     public static String getAliases() {
 

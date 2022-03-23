@@ -3,15 +3,13 @@ package commands;
 import org.javacord.api.event.message.MessageCreateEvent;
 import org.javacord.api.listener.message.MessageCreateListener;
 
-import javax.mail.event.MessageChangedEvent;
-import javax.mail.event.MessageChangedListener;
-
-import static rcs.utilities.*;
-import static rcs.info.*;
+import static rcs.info.prefix;
+import static rcs.utilities.discardable;
+import static rcs.utilities.equalsAny;
 
 public class DEV implements MessageCreateListener {
 
-    public static String[] aliases = { prefix + "enterdev", prefix + "devlog" };
+    public static String[] aliases = {prefix + "enterdev", prefix + "devlog"};
 
     @Override
     public void onMessageCreate(MessageCreateEvent event) {
@@ -27,7 +25,6 @@ public class DEV implements MessageCreateListener {
 
 
                 event.getMessage().reply("Dev mode entered.");
-
 
 
             }

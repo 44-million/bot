@@ -1,20 +1,20 @@
 package commands.channel;
 
-import static rcs.info.prefix;
-import static rcs.utilities.discardable;
-import static rcs.utilities.equalsAny;
-
-import java.util.concurrent.ExecutionException;
-
 import org.javacord.api.entity.channel.Channel;
 import org.javacord.api.entity.message.embed.EmbedBuilder;
 import org.javacord.api.event.message.MessageCreateEvent;
 import org.javacord.api.listener.message.MessageCreateListener;
 
+import java.util.concurrent.ExecutionException;
+
+import static rcs.info.prefix;
+import static rcs.utilities.discardable;
+import static rcs.utilities.equalsAny;
+
 public class DeleteChannel implements MessageCreateListener {
 
 
-    public static final String[] aliases = { prefix + "deletechannel", prefix + "dchannel", prefix + "delete" };
+    public static final String[] aliases = {prefix + "deletechannel", prefix + "dchannel", prefix + "delete"};
 
     public static String description() {
         return "A command to *delete* text channels!\n\n**SYNTAX**\n\n```html\n" + prefix + "delete [#channel]\n```";

@@ -1,15 +1,9 @@
 package rcs;
 
-import static rcs.info.prefix;
-import static rcs.info.token;
-import static rcs.utilities.reset;
-import static rcs.utilities.yellow;
-
-import java.time.Instant;
-import java.util.ArrayList;
-import java.util.List;
-
 import commands.*;
+import commands.channel.ChannelInfo;
+import commands.channel.CreateChannel;
+import commands.channel.DeleteChannel;
 import main.App;
 import org.javacord.api.DiscordApi;
 import org.javacord.api.DiscordApiBuilder;
@@ -18,27 +12,31 @@ import org.javacord.api.entity.permission.Permissions;
 import org.javacord.api.entity.user.UserStatus;
 import org.javacord.api.listener.message.MessageCreateListener;
 
-import commands.channel.ChannelInfo;
-import commands.channel.CreateChannel;
-import commands.channel.DeleteChannel;
+import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
 
+import static rcs.info.prefix;
+import static rcs.info.token;
+import static rcs.utilities.reset;
+import static rcs.utilities.yellow;
+
+@SuppressWarnings("all")
 public class Aois {
 
     public static DiscordApi aois;
     public static ArrayList<MessageCreateListener> commands = new ArrayList<>();
-    private String s;
-    private long epoch;
+    private final String s;
+    private final long epoch;
 
 
     public Aois() {
-
         this.s = "Aois";
         this.epoch = Instant.now().getEpochSecond();
-
     }
 
     public DiscordApi get() {
-        return this.aois;
+        return aois;
     }
 
     public String getUptime() {
@@ -48,8 +46,8 @@ public class Aois {
     public Aois init() {
 
         Aois.aois = new DiscordApiBuilder()
-            .setToken(token)
-            .login().join();
+                .setToken(token)
+                .login().join();
 
         Aois.aois.updateStatus(UserStatus.DO_NOT_DISTURB);
         Aois.aois.updateActivity(ActivityType.CUSTOM, prefix + "help");

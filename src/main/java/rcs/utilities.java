@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import com.fasterxml.jackson.dataformat.yaml.YAMLGenerator;
-import main.App;
 import org.javacord.api.entity.channel.Channel;
 import org.javacord.api.entity.message.MessageAuthor;
 import org.javacord.api.entity.permission.PermissionType;
@@ -12,7 +11,6 @@ import org.javacord.api.entity.permission.Role;
 import org.javacord.api.entity.server.Server;
 import org.javacord.api.entity.user.User;
 import org.javacord.api.event.message.MessageCreateEvent;
-import org.javacord.api.listener.message.MessageCreateListener;
 
 import java.awt.*;
 import java.io.File;
@@ -23,13 +21,20 @@ import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAccessor;
 import java.time.temporal.TemporalAmount;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Random;
-import java.util.Set;
 import java.util.concurrent.ExecutionException;
 
 public class utilities {
+
+    public static final String reset = "\u001B[0m";
+    public static final String black = "\u001B[30m";
+    public static final String red = "\u001B[31m";
+    public static final String green = "\u001B[32m";
+    public static final String yellow = "\u001B[33m";
+    public static final String blue = "\u001B[34m";
+    public static final String purple = "\u001B[35m";
+    public static final String cyan = "\u001B[36m";
+    public static final String white = "\u001B[37m";
 
     public static boolean equalsAny(String[] aliases, String s, boolean ignoreCase) {
 
@@ -56,11 +61,7 @@ public class utilities {
 
     public static boolean discardable(MessageCreateEvent event, String[] aliases) {
 
-        if (event.getMessageAuthor().isBotUser() || !equalsAny(aliases, event.getMessageContent(), true)) {
-            return true;
-        }
-
-        return false;
+        return event.getMessageAuthor().isBotUser() || !equalsAny(aliases, event.getMessageContent(), true);
     }
 
     public static boolean equalsAny(String[] aliases, String reg) {
@@ -74,16 +75,6 @@ public class utilities {
         }
         return false;
     }
-
-    public static final String reset = "\u001B[0m";
-    public static final String black = "\u001B[30m";
-    public static final String red = "\u001B[31m";
-    public static final String green = "\u001B[32m";
-    public static final String yellow = "\u001B[33m";
-    public static final String blue = "\u001B[34m";
-    public static final String purple = "\u001B[35m";
-    public static final String cyan = "\u001B[36m";
-    public static final String white = "\u001B[37m";
 
     public static Color getRndColor() {
         Random random = new Random();
@@ -402,7 +393,7 @@ public class utilities {
 
         for (Role role : user.getRoles(server)) {
 
-                s.append(role.getMentionTag()).append("\n");
+            s.append(role.getMentionTag()).append("\n");
 
         }
         return s.toString();

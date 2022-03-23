@@ -7,9 +7,12 @@ public class Config {
     private String prefix;
     private boolean allowCustomPrefix;
 
-    public Config() {}
+    public Config() {
+    }
 
-    public boolean isAllowCustomPrefix() { return allowCustomPrefix; }
+    public boolean isAllowCustomPrefix() {
+        return allowCustomPrefix;
+    }
 
     public String getToken() {
         return token;

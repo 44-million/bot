@@ -1,16 +1,16 @@
 package commands;
 
-import main.App;
 import org.javacord.api.entity.message.embed.EmbedBuilder;
 import org.javacord.api.event.message.MessageCreateEvent;
 import org.javacord.api.listener.message.MessageCreateListener;
 
-import static rcs.utilities.*;
-import static rcs.info.*;
+import static rcs.info.prefix;
+import static rcs.utilities.discardable;
+import static rcs.utilities.equalsAny;
 
 public class BotInfo implements MessageCreateListener {
 
-    public static String[] aliases = { prefix + "botinfo", prefix + "binfo", "aoisinfo" };
+    public static String[] aliases = {prefix + "botinfo", prefix + "binfo", "aoisinfo"};
 
     public static String description() {
 

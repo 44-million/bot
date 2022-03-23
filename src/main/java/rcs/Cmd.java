@@ -4,7 +4,7 @@ import org.javacord.api.listener.message.MessageCreateListener;
 
 public class Cmd {
 
-    private String name;
+    private final String name;
     private String description;
     private MessageCreateListener listener;
 
@@ -18,9 +18,9 @@ public class Cmd {
     }
 
     public Cmd(String name, String description, MessageCreateListener lis) {
-       this.name = name;
-       this.description = description;
-       this.listener = lis;
+        this.name = name;
+        this.description = description;
+        this.listener = lis;
     }
 
 }

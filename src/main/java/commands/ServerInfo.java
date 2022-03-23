@@ -5,12 +5,12 @@ import org.javacord.api.entity.server.Server;
 import org.javacord.api.event.message.MessageCreateEvent;
 import org.javacord.api.listener.message.MessageCreateListener;
 
+import static rcs.info.prefix;
 import static rcs.utilities.*;
-import static rcs.info.*;
 
 public class ServerInfo implements MessageCreateListener {
 
-    public static String[] aliases = { prefix + "info", prefix + "serverinfo", prefix + "sinfo" };
+    public static String[] aliases = {prefix + "info", prefix + "serverinfo", prefix + "sinfo"};
 
     public static String description() {
         return "Returns information about the requested server!\n\nReturns info like the **member count** and much more!\n\n**SYNTAX**\n\n```\n" + prefix + "sinfo\n```";

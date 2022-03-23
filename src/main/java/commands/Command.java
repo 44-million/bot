@@ -1,24 +1,24 @@
 package commands;
 
+import commands.channel.ChannelInfo;
 import commands.channel.CreateChannel;
 import commands.channel.DeleteChannel;
 import org.javacord.api.entity.message.embed.EmbedBuilder;
 import org.javacord.api.event.message.MessageCreateEvent;
 import org.javacord.api.listener.message.MessageCreateListener;
 
-import commands.channel.ChannelInfo;
-
-import static rcs.info.*;
-import static rcs.utilities.*;
+import static rcs.info.prefix;
+import static rcs.utilities.discardable;
+import static rcs.utilities.equalsAny;
 
 public class Command implements MessageCreateListener {
 
-    public static String[] aliases = { prefix + "command", prefix + "cmd", prefix + "helpcmd", prefix + "helpcommand", prefix + "infoabout" };
+    public static String[] aliases = {prefix + "command", prefix + "cmd", prefix + "helpcmd", prefix + "helpcommand", prefix + "infoabout"};
 
     @Override
     public void onMessageCreate(MessageCreateEvent event) {
-        
-        
+
+
         if (discardable(event, aliases)) {
             return;
         }
@@ -27,7 +27,7 @@ public class Command implements MessageCreateListener {
 
             String[] command = event.getMessageContent().split(" ");
 
-            String two = command[1].replace("?", "");
+            String two = command[1].replace(prefix, "");
             // just so i dont forget, this is to remove the prefix and `command` segment, so we just have the requested command.
             String main = prefix + two;
             System.out.println(main);
@@ -77,7 +77,7 @@ public class Command implements MessageCreateListener {
 
                 event.getMessage().reply(embed);
 
-            }  else if (equalsAny(ServerInfo.aliases, main, true)) {
+            } else if (equalsAny(ServerInfo.aliases, main, true)) {
 
                 EmbedBuilder embed = new EmbedBuilder();
                 embed.setTitle("Info about: " + main);
@@ -112,7 +112,7 @@ public class Command implements MessageCreateListener {
 
         }
 
-        
+
     }
-    
+
 }

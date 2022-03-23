@@ -1,15 +1,15 @@
 package commands;
 
-import static rcs.info.prefix;
-import static rcs.utilities.discardable;
-import static rcs.utilities.equalsAny;
-import static rcs.utilities.getRndColor;
-
 import org.javacord.api.entity.message.embed.EmbedBuilder;
 import org.javacord.api.event.message.MessageCreateEvent;
 import org.javacord.api.listener.message.MessageCreateListener;
 
+import static rcs.info.prefix;
+import static rcs.utilities.*;
+
 public class Latency implements MessageCreateListener {
+
+    public static String[] aliases = {prefix + "ping", prefix + "latency"};
 
     /**
      * @return The description for this command
@@ -20,8 +20,6 @@ public class Latency implements MessageCreateListener {
                 "\n```html\n" + prefix + "ping" +
                 "\n```";
     }
-
-    public static String[] aliases = { prefix + "ping", prefix + "latency" };
 
     public static String getAliases() {
 
