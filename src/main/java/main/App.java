@@ -1,15 +1,15 @@
 package main;
 
 import org.javacord.api.entity.user.UserStatus;
-import rcs.Aois;
+import rcs.Bot;
 
 public class App {
 
     public static String uptime;
-    public static Aois bot;
+    public static Bot bot;
 
     public static void main(String[] args) {
-        Aois aois = new Aois();
+        Bot aois = new Bot();
         aois.init("I'm back", UserStatus.DO_NOT_DISTURB);
         aois.upsertCommands();
     }

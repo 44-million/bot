@@ -5,7 +5,7 @@ import org.javacord.api.entity.server.Server;
 import org.javacord.api.entity.user.User;
 import org.javacord.api.event.message.MessageCreateEvent;
 import org.javacord.api.listener.message.MessageCreateListener;
-import rcs.Aois;
+import rcs.Bot;
 import rcs.utilities;
 
 import static rcs.info.prefix;
@@ -76,7 +76,7 @@ public class UserInfo implements MessageCreateListener {
 
                 long id = Long.parseLong(command[1]);
 
-                User user = Aois.aois.getUserById(id).get();
+                User user = Bot.aois.getUserById(id).get();
 
                 EmbedBuilder embed = new EmbedBuilder();
                 Server server = event.getServer().get();
