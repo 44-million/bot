@@ -1,0 +1,10 @@
+/.idea
+.gitattributes
+Procfile
+*.bat
+/bin
+/build
+/.gradle
+.classpath
+*.class
+.DS_Store
