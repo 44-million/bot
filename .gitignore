@@ -9,3 +9,5 @@ Procfile
 *.class
 .DS_Store
 /target
+config.yaml
+config.yml

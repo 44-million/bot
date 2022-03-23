@@ -109,16 +109,20 @@ public class Aois {
 
     public Aois init(String status, UserStatus u) {
 
-        Aois.aois = new DiscordApiBuilder()
-                .setToken(token)
-                .login().join();
+        try {
+            Aois.aois = new DiscordApiBuilder()
+                    .setToken(token)
+                    .login().join();
 
-        Aois.aois.updateStatus(u);
-        Aois.aois.updateActivity(ActivityType.CUSTOM, status);
-        System.out.println(Aois.aois.getYourself().getName() + " is done loading!\n\nYou can invite the bot with: " + yellow + Aois.aois.createBotInvite(Permissions.fromBitmask(8)) + reset + ".");
+            Aois.aois.updateStatus(u);
+            Aois.aois.updateActivity(ActivityType.CUSTOM, status);
+            System.out.println(Aois.aois.getYourself().getName() + " is done loading!\n\nYou can invite the bot with: " + yellow + Aois.aois.createBotInvite(Permissions.fromBitmask(8)) + reset + ".");
 
-        App.uptime = getUptime();
-        App.bot = this;
+            App.uptime = getUptime();
+            App.bot = this;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
         return this;
     }

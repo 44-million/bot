@@ -10,8 +10,8 @@ commands/UserInfoDev.java
  commands.UserInfoDev
 commands/channel/ChannelInfo.java
  commands.channel.ChannelInfo
-main/SQL/create.java
- main.SQL.create
+commands/Command.java
+ commands.Command
 rcs/utilities.java
  rcs.utilities
 commands/Latency.java
@@ -26,8 +26,6 @@ commands/Help.java
  commands.Help
 commands/channel/DeleteChannel.java
  commands.channel.DeleteChannel
-commands/Command.java
- commands.Command
 main/App.java
  main.App
 commands/UserInfo.java
