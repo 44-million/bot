@@ -11,3 +11,4 @@ Procfile
 /target
 config.yaml
 config.yml
+build/resources/main/config.yml
